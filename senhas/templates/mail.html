@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Senha</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Confirme com o token enviado por e-mail</h1>
+    <form action="{% url 'toke' id=dados.id %}" method="POST">{% csrf_token %}
+        <label>token</label>
+        <input name="toke" type="text" required>
+        <br>
+        <input type="submit" >
+        
+        <p>{{mensagem}}</p>
+    </form>
+    <a href="{% url 'ir_login' %}">voltar</a>
+  </body>
+</html>
